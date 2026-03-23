@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
-#define Init(msg) vector<int> msg##i(n); for (int& x:msg##i){x=r(gen); cout<<x<<" ";}
+#define Init(msg) vector<int> msg##i(n); for (int& x:msg##i){x=r(gen); cout<<x<<" ";} cout<<"\nthat was "<<#msg<<"\n";
 
 using namespace std;
 
