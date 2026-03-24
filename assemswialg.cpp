@@ -2,7 +2,7 @@
 #include <random>
 #include <algorithm>
 #include <vector>
-#define li[j](msg1,msg2) l#msg1##[msg2]
+
 using namespace std;
 
 int main(){
@@ -26,6 +26,11 @@ int main(){
     int e1,e2;
     int x1,x2;
 
+    e1=5;
+    e2=7;
+    x1=64;
+    x2=27;
+
     for(int& x: a1){x=r(gen);}
     for(int& x: a2){x=r(gen);}
     for(int& x: t1){x=r(gen);}
@@ -34,10 +39,10 @@ int main(){
     vector<int> f1(n);
     vector<int> f2(n);
 
-    f1.at(1)=e1+a1[1];
-    f2.at(1)=e2+a2[1];
+    f1.at(0)=e1+a1[0];
+    f2.at(0)=e2+a2[0];
 
-    for(int j=2;j<=n;j++){
+    for(int j=1;j<n;j++){
         if( f1[j-1]+a1[j]<=f2[j-1]+t2[j-1]+a1[j]){f1[j]=f1[j-1]+a1[j];l1[j]=1;}
         else {f1[j]=f2[j-1]+t2[j-1]+a1[j];l1[j]=2;}
         if( f2[j-1]+a2[j]<=f1[j-1]+t1[j-1]+a2[j]){f2[j]=f2[j-1]+a2[j];l2[j]=1;}
@@ -49,5 +54,5 @@ int main(){
 
     int i=l;
     cout<<"line "<< i<<" station "<< n<<"\n";
-    for (int j=2; j<=n;j++){cout<<"line "<< li[j](l,j)<<" station "<<j-1}
+    for (int j=1; j<n;j++){cout<<"line "<< (l=1?l1[j]:l2[j])<<" station "<<j-1<<"\n";}
 }
