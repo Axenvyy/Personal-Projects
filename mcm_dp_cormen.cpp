@@ -2,8 +2,13 @@
 #include <vector>
 #include <random>
 #include <utility>
+#include <climits>
 
 using namespace std;
+
+void mcm(vector<int> p, vector<vector<int>>& s, vector<vector<int>>& m);
+    void print(const vector<vector<int>>& s,int i, int j);
+
 
 int main(){
     random_device rd;
@@ -23,9 +28,7 @@ int main(){
     vector<int> p(k-1);
     for( int& x: p){x=r(gen);}
 
-    void mcm(vector<int> p, vector<vector<int>>& s, vector<vector<int>>& m);
-    void print(const vector<vector<int>>& s,int i, int j);
-
+    
     mcm(p,s,m);
     print(s,1,k);
 
@@ -36,7 +39,7 @@ int main(){
     for (int l=1;l<n;l++){
         for (int i=0;i<n-2+l;i++){
             int j=i+l-1;
-            m[i][j]=INFINITY;
+            m[i][j]=INT_MAX;
             for (int l=i;l<j;l++){
                 int q= m[i][l]+m[l+1][j]+p[i-2]*p[l-1]*p[j-1];
                 if(q<m[i][j]){m[i][j]=q;s[i][j]=l;}

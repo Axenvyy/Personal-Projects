@@ -22,9 +22,9 @@ for(int i=0;i<N;i++){
 
     v.push_back(temp);
 
- return v;
+ 
 }
-
+return v;
 };
 
 void print(vector<vector<int>>& a){for (int i=0;i< a.size();i++){
