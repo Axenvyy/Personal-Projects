@@ -46,7 +46,7 @@ int main(){
 }
 
 void print(const vector<vector<int>>& s,int i, int j){
-    if(i==j){cout<<"A"<<i<<" ";}
+    if(i==j){cout<<"A"<<i;}
     else {cout<<"(";print(s,i,s[i][j]);print(s,s[i][j]+1,j);cout<<")";}
 }
     
