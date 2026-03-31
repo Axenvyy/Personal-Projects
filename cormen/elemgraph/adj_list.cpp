@@ -13,7 +13,7 @@ vector<vector<int>> randomgraph(int v){
 
     double p= r(gen);
 
-    cout<<"generating graph with "<<v<<" vertices with p = "<<p<<"\n";
+    cout<<"generating graph with "<<v<<" vertices with p = "<<1.00-p<<"\n";
 
     vector<vector<int>> g(v);
 
